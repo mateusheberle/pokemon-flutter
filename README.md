@@ -8,12 +8,6 @@ Este projeto utiliza Flutter para criar um aplicativo Pokédex completo, permiti
 
 Esse código é importante para mim pois foi o projeto final do curso "Google Flutter do Zero ao Pro" da EBAC (Escola Britânica de Artes Criativas e Tecnologia)
 
-### screenshots
-
-<img src="1.png" alt="Descrição da Imagem" width="150"/>
-<img src="2.png" alt="Descrição da Imagem" width="150"/>
-<img src="3.png" alt="Descrição da Imagem" width="150"/>
-
 ## Funcionalidades:
 
 - Lista completa de Pokémon com imagens e nomes
