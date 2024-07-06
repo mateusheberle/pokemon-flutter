@@ -22,17 +22,48 @@ migrate_working_dir/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+<<<<<<< Updated upstream
 .pub-cache/
 .pub/
 android/
 build/
+=======
+.packages
+.idea/
+
+# Diretório de build
+/build/
+
+# Arquivos de configuração pessoais
+.vscode/
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Arquivos de chaves de API, segredos, etc.
+.env
+
+# Diretórios de build específicos do sistema operacional
+>>>>>>> Stashed changes
 ios/
 linux/
 macos/
 web/
 windows/
+<<<<<<< Updated upstream
 *.lock
 *.metadata
 *.gitattributes
+=======
+
+# Arquivos de imagens para o README.md
+image.png
+1.png
+2.png
+3.png
+>>>>>>> Stashed changes
 *.iml
 *.lock
