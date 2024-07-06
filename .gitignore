@@ -1,35 +1,8 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Arquivos e diretórios gerados pelo Dart
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-<<<<<<< Updated upstream
-.pub-cache/
-.pub/
-android/
-build/
-=======
 .packages
-.idea/
 
 # Diretório de build
 /build/
@@ -47,23 +20,8 @@ build/
 .env
 
 # Diretórios de build específicos do sistema operacional
->>>>>>> Stashed changes
 ios/
 linux/
 macos/
 web/
 windows/
-<<<<<<< Updated upstream
-*.lock
-*.metadata
-*.gitattributes
-=======
-
-# Arquivos de imagens para o README.md
-image.png
-1.png
-2.png
-3.png
->>>>>>> Stashed changes
-*.iml
-*.lock
