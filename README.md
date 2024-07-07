@@ -46,3 +46,8 @@ Este projeto ainda está em desenvolvimento e novas funcionalidades serão adici
 Este projeto é de código aberto e você é bem-vindo para contribuir! Para mais informações, consulte o guia de contribuição no repositório GitHub.
 
 
+<p align="center">
+  <img src="1.png" alt="Imagem 1" width="30%">
+  <img src="2.png" alt="Imagem 2" width="30%">
+  <img src="3.png" alt="Imagem 3" width="30%">
+</p>
