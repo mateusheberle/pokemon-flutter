@@ -1,11 +1,10 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
+import 'package:ebac_flutter/Home/Page/pokemon_detail.dart';
+import 'package:ebac_flutter/Home/Shared/imagem_item.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../../Common/Model/pokemon.dart';
-import '../Controller/home_controller.dart';
-import '../Page/pokemon_detail.dart';
-import '../Shared/imagem_item.dart';
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({
@@ -61,10 +60,10 @@ class CarouselCard extends StatelessWidget {
             final result = Navigator.push(
               context,
               PageRouteBuilder(
-                transitionDuration: const Duration(milliseconds: 1500),
+                transitionDuration: const Duration(milliseconds: 1000),
                 reverseTransitionDuration: const Duration(milliseconds: 500),
                 pageBuilder: (_, __, ___) => PokemonDetail(
-                  name: pokemon.name,
+                  pokemon: pokemon,
                 ),
                 settings: RouteSettings(
                   arguments: Arguments(

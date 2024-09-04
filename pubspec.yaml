@@ -13,13 +13,14 @@ dependencies:
   http: ^1.2.1 # para fazer requisições http, acesso a servidor web
   intl: ^0.19.0 # para formatar datas
   switcher: 1.0.0
-  carousel_slider: ^4.0.0 # para fazer o carrossel de imagens
+  carousel_slider: ^5.0.0 # para fazer o carrossel de imagens
   flutter_rating_bar: ^4.0.0 # notas com estrelinhas
   shared_preferences: ^2.0.6 # save dos dados localmente
-  share_plus: ^9.0.0 # compartilhar conteúdo
+  share_plus: ^10.0.1 # compartilhar conteúdo
   path_provider: ^2.0.8 # para salvar imagens
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.10+1
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:

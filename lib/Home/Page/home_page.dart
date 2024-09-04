@@ -1,13 +1,13 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
+import 'package:ebac_flutter/Home/Controller/home_page_repository.dart';
+import 'package:ebac_flutter/Home/Widgets/catalog_list.dart';
+import 'package:ebac_flutter/Home/Widgets/custom_appbar.dart';
+import 'package:ebac_flutter/Home/Widgets/custom_refresh.dart';
+import 'package:ebac_flutter/Home/Widgets/recently_added_implementation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../Controller/home_controller.dart';
-import '../Controller/home_page_repository.dart';
-import '../Widgets/catalog_list.dart';
-import '../Widgets/custom_appbar.dart';
-import '../Widgets/custom_refresh.dart';
-import '../Widgets/recently_added_implementation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -51,7 +51,6 @@ class _HomePageState extends State<HomePage> {
     _homePageController.fullCatalog.dispose();
     _homePageController.customCarouselSliders.dispose();
     _homePageController.recentlyAdded.dispose();
-    _homePageRepository.porcentagem.dispose();
     super.dispose();
   }
 
@@ -63,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         arguments: Arguments(
           homePageController: _homePageController,
           tag: '',
-          pokemon: null,
+          pokemon: Pokemon(id: 0, name: ''),
         ),
         globalKey: GlobalKey(),
         isDetailPage: false,

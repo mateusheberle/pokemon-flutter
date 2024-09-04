@@ -1,7 +1,6 @@
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
 import 'package:ebac_flutter/Home/Controller/home_page_repository.dart';
 import 'package:flutter/material.dart';
-
-import '../Controller/home_controller.dart';
 
 class CustomRefresh extends StatelessWidget {
   const CustomRefresh({
@@ -21,14 +20,10 @@ class CustomRefresh extends StatelessWidget {
           valueListenable: homePageController.isRefreshCustomOn,
           builder: (context, value, child) {
             return homePageController.isRefreshCustomOn.value
-                ? ValueListenableBuilder<int>(
-                    valueListenable: repository.porcentagem,
-                    builder: (context, value, child) {
-                      return Text(
-                        '$value%',
-                        style: const TextStyle(fontSize: 20),
-                      );
-                    },
+                ? CircularProgressIndicator(
+                    valueColor:
+                        AlwaysStoppedAnimation<Color>(Colors.greenAccent),
+                    strokeWidth: 5.0,
                   )
                 : const SizedBox();
           },

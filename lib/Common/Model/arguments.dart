@@ -3,7 +3,7 @@ import 'pokemon.dart';
 
 class Arguments {
   final String tag;
-  final Pokemon? pokemon;
+  final Pokemon pokemon;
   final HomePageController homePageController;
 
   Arguments({

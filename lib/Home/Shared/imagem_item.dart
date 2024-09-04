@@ -1,8 +1,7 @@
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Shared/imagem_network.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/pokemon.dart';
-import '../../Common/appstyle.dart';
-import 'imagem_network.dart';
 
 class ImageItem extends StatelessWidget {
   const ImageItem({
@@ -16,6 +15,7 @@ class ImageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print('imagems:' + tag);
     return Container(
       margin: const EdgeInsets.all(1.0),
       child: ClipRRect(
@@ -26,7 +26,7 @@ class ImageItem extends StatelessWidget {
             Hero(
               tag: tag,
               child: ImageNetwork(
-                url: pokemon.sprites?[0] ?? '',
+                url: pokemon.sprites!,
                 fit: BoxFit.contain,
                 height: 350,
                 width: null,

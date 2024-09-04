@@ -1,9 +1,8 @@
+import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
+import 'package:ebac_flutter/Home/Widgets/custom_carousel_slider.dart';
+import 'package:ebac_flutter/Home/Widgets/recently_added.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/appstyle.dart';
-import '../Controller/home_controller.dart';
-import 'custom_carousel_slider.dart';
-import 'recently_added.dart';
 
 class RecentlyAddedImplementation extends StatelessWidget {
   const RecentlyAddedImplementation({

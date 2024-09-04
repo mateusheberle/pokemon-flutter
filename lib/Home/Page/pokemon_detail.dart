@@ -1,29 +1,28 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Widgets/custom_appbar.dart';
+import 'package:ebac_flutter/Home/Widgets/detail_image.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../Widgets/custom_appbar.dart';
-import '../Widgets/detail_image.dart';
-
-import '../../Common/appstyle.dart';
 
 class PokemonDetail extends StatefulWidget {
   const PokemonDetail({
     super.key,
-    required this.name,
+    required this.pokemon,
   });
 
-  final String name;
+  final Pokemon pokemon;
 
   @override
-  State<PokemonDetail> createState() => _MovieDetailState();
+  State<PokemonDetail> createState() => _PokemonDetailState();
 }
 
-class _MovieDetailState extends State<PokemonDetail> {
+class _PokemonDetailState extends State<PokemonDetail> {
   final _globalKey = GlobalKey();
   ValueNotifier<bool> crossFade = ValueNotifier(false);
   ValueNotifier<bool> printMovieDetail = ValueNotifier(false);
 
-  // Extract data from incoming arguments
+// Extract data from incoming arguments
   Arguments extractArguments(BuildContext context) {
     final arguments = ModalRoute.of(context)!.settings.arguments as Arguments;
     return arguments;
@@ -38,8 +37,6 @@ class _MovieDetailState extends State<PokemonDetail> {
   @override
   void initState() {
     super.initState();
-
-    // Start animations
     startCrossFade();
   }
 
@@ -53,15 +50,24 @@ class _MovieDetailState extends State<PokemonDetail> {
   @override
   Widget build(BuildContext context) {
     Arguments arguments = extractArguments(context);
-
     return Scaffold(
       appBar: CustomAppBar(
-        title: widget.name,
+        title: widget.pokemon.name,
         arguments: arguments,
         globalKey: _globalKey,
         isDetailPage: true,
       ),
-      body: RepaintBoundary(
+      body:
+          // FutureBuilder<void>(
+          // future: HomePageRepository(Client()).getPokemonDetail(widget.pokemon),
+          // builder: (context, snapshot) {
+          //   if (snapshot.connectionState == ConnectionState.waiting) {
+          //     return Center(child: CircularProgressIndicator());
+          //   } else if (snapshot.hasError) {
+          //     return Center(child: Text('Erro ao carregar detalhes do pokemon'));
+          //   } else {
+          //     return
+          RepaintBoundary(
         key: _globalKey,
         child: Stack(
           children: [
@@ -70,11 +76,17 @@ class _MovieDetailState extends State<PokemonDetail> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: DetailImage(arguments: arguments, crossFade: crossFade),
+              child: DetailImage(
+                arguments: arguments,
+                crossFade: crossFade,
+              ),
             ),
           ],
         ),
       ),
+      //     }
+      //   },
+      // ),
     );
   }
 }

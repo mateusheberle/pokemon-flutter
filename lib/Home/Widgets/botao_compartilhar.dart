@@ -1,6 +1,5 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
 
 class BotaoCompartilhar extends StatelessWidget {
   const BotaoCompartilhar({

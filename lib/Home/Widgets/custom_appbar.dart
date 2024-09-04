@@ -1,9 +1,7 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
+import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Widgets/botao_compartilhar.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../../Common/appstyle.dart';
-import 'botao_compartilhar.dart';
-import 'botao_sair.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -35,7 +33,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         isDetailPage
             ? BotaoCompartilhar(arguments: arguments, globalKey: globalKey)
-            : const BotaoSair()
+            : SizedBox(),
       ],
     );
   }

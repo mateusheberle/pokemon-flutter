@@ -1,9 +1,8 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
 import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Widgets/detail_base_image.dart';
+import 'package:ebac_flutter/Home/Widgets/detail_information.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import 'detail_base_image.dart';
-import 'detail_information.dart';
 
 class DetailImage extends StatelessWidget {
   const DetailImage({
@@ -31,7 +30,7 @@ class DetailImage extends StatelessWidget {
                   arguments: arguments,
                   crossFade: crossFade,
                 ),
-                DetailInformation(arguments: arguments)
+                DetailInformation(arguments: arguments),
               ],
             ),
           ),

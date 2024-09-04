@@ -18,7 +18,7 @@ class Pokemon {
   String? habitat;
   String? shape;
   String? color;
-  List<String>? sprites;
+  String? sprites;
   List<String>? types;
 
   factory Pokemon.fromJson(Map<String, dynamic> json) => Pokemon(
@@ -27,7 +27,7 @@ class Pokemon {
         habitat: json['habitat']['name'],
         shape: json['shape']['name'],
         color: json['color']['name'],
-        sprites: List<String>.from(json['sprites'].map((x) => x)),
+        sprites: json['sprites'],
         types: List<String>.from(json['types'].map((x) => x)),
       );
 
@@ -50,7 +50,7 @@ class Pokemon {
     String? shape,
     String? color,
     List<String>? abilities,
-    List<String>? sprites,
+    String? sprites,
     List<String>? types,
   }) =>
       Pokemon(

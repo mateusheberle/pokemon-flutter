@@ -1,13 +1,12 @@
-import 'package:ebac_flutter/Common/appstyle.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ebac_flutter/Common/Model/arguments.dart';
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
+import 'package:ebac_flutter/Home/Page/pokemon_detail.dart';
+import 'package:ebac_flutter/Home/Shared/imagem_network.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../../Common/Model/pokemon.dart';
-import '../Controller/home_controller.dart';
-import '../Page/pokemon_detail.dart';
-import '../Shared/imagem_network.dart';
 
 class RecentlyAdded extends StatefulWidget {
   const RecentlyAdded({
@@ -34,6 +33,7 @@ class _RecentlyAddedState extends State<RecentlyAdded> {
 
   @override
   Widget build(BuildContext context) {
+    // print('recently: ' + widget.tag);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -71,11 +71,11 @@ class _RecentlyAddedState extends State<RecentlyAdded> {
                               context,
                               PageRouteBuilder(
                                 transitionDuration:
-                                    const Duration(milliseconds: 1500),
+                                    const Duration(milliseconds: 1000),
                                 reverseTransitionDuration:
                                     const Duration(milliseconds: 500),
                                 pageBuilder: (_, __, ___) => PokemonDetail(
-                                  name: item.name,
+                                  pokemon: item,
                                 ),
                                 settings: RouteSettings(
                                   arguments: Arguments(
@@ -121,7 +121,7 @@ class _RecentlyAddedState extends State<RecentlyAdded> {
                                           ),
                                         ),
                                         child: ImageNetwork(
-                                          url: item.sprites?[0] ?? '',
+                                          url: item.sprites!,
                                           fit: BoxFit.fitHeight,
                                           height: 150,
                                           width: double.infinity,

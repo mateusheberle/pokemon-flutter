@@ -1,8 +1,7 @@
+import 'package:ebac_flutter/Common/Model/arguments.dart';
 import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Shared/imagem_network.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/arguments.dart';
-import '../Shared/imagem_network.dart';
 
 class DetailBaseImage extends StatelessWidget {
   const DetailBaseImage({
@@ -16,6 +15,7 @@ class DetailBaseImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print('detail: ' + arguments.tag);
     return SingleChildScrollView(
       child: Hero(
         tag: arguments.tag,
@@ -27,34 +27,15 @@ class DetailBaseImage extends StatelessWidget {
           ),
           child: ValueListenableBuilder<bool>(
             valueListenable: crossFade,
-            builder: (context, value, child) => AnimatedCrossFade(
-              duration: const Duration(milliseconds: 1500),
-              firstCurve: Curves.decelerate,
-              secondCurve: Curves.easeInOut,
-              sizeCurve: Curves.decelerate,
-              firstChild: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                    Radius.circular(AppStyle.roundAllCorners)),
-                child: ImageNetwork(
-                  url: arguments.pokemon!.sprites?[0] ?? '',
-                  fit: BoxFit.cover,
-                  width: 200,
-                  height: 200,
-                ),
+            builder: (context, value, child) => ClipRRect(
+              borderRadius: const BorderRadius.all(
+                  Radius.circular(AppStyle.roundAllCorners)),
+              child: ImageNetwork(
+                url: arguments.pokemon.sprites!,
+                fit: BoxFit.cover,
+                width: 200,
+                height: 200,
               ),
-              secondChild: ClipRRect(
-                borderRadius: const BorderRadius.all(
-                    Radius.circular(AppStyle.roundAllCorners)),
-                child: ImageNetwork(
-                  url: arguments.pokemon!.sprites?[1] ?? '',
-                  fit: BoxFit.cover,
-                  width: 200,
-                  height: 200,
-                ),
-              ),
-              crossFadeState: crossFade.value
-                  ? CrossFadeState.showFirst
-                  : CrossFadeState.showSecond,
             ),
           ),
         ),

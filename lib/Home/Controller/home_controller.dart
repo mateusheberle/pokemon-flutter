@@ -1,11 +1,10 @@
 import 'dart:math' as math;
 import 'dart:math';
+import 'package:ebac_flutter/Common/Model/catalog.dart';
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Home/Controller/ihome_page_repository.dart';
+import 'package:ebac_flutter/Home/Widgets/custom_carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../../Common/Model/catalog.dart';
-import '../../Common/Model/pokemon.dart';
-import '../Widgets/custom_carousel_slider.dart';
-import 'ihome_page_repository.dart';
 
 // imports para compartilhar
 import 'dart:io';
@@ -29,7 +28,6 @@ class HomePageController {
       ValueNotifier([]);
   ValueNotifier<List<CustomCarouselSlider>> recentlyAdded = ValueNotifier([]);
 
-  // constructor
   HomePageController({
     required this.name,
     required this.ihomePageRepository,
@@ -40,13 +38,17 @@ class HomePageController {
   // Method for search pokemons
   Future<Catalog> getPokemon() async {
     isRefreshCustomOn.value = true;
-    final catalog = await ihomePageRepository.getPokemon();
+    var catalog = await ihomePageRepository.getPokemon();
     await _processData(catalog);
     isRefreshCustomOn.value = false;
     return fullCatalog.value;
   }
 
-  // implementation to work with data to generate list sorted by genre and pokemons recently
+  Future<Pokemon> getPokemonDetail(Pokemon inputPokemon) async {
+    var pokemon = await ihomePageRepository.getPokemonDetail(inputPokemon);
+    return pokemon;
+  }
+
   Future<void> _processData(Catalog catalog) async {
     fullCatalog.value = catalog;
     _generatetypeList();
@@ -56,10 +58,14 @@ class HomePageController {
 
   void _generatetypeList() {
     typeList.value = [];
-    for (var pokemon in fullCatalog.value.pokemons!) {
-      for (var e in pokemon.types!) {
-        if (!typeList.value.contains(e)) {
-          typeList.value.add(e);
+    if (fullCatalog.value.pokemons != null) {
+      for (var pokemon in fullCatalog.value.pokemons!) {
+        if (pokemon.types != null) {
+          for (var e in pokemon.types!) {
+            if (!typeList.value.contains(e)) {
+              typeList.value.add(e);
+            }
+          }
         }
       }
     }

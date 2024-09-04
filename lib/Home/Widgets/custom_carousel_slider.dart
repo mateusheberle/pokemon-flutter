@@ -1,9 +1,9 @@
+import 'package:ebac_flutter/Common/Model/pokemon.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
+import 'package:ebac_flutter/Home/Widgets/carousel_card.dart';
 import 'package:flutter/material.dart';
 
 // import '../../Common/Model/movie.dart';
-import '../../Common/Model/pokemon.dart';
-import '../Controller/home_controller.dart';
-import 'carousel_card.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
   const CustomCarouselSlider({

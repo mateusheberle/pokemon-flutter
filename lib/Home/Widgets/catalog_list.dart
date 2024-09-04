@@ -1,8 +1,7 @@
 import 'package:ebac_flutter/Common/appstyle.dart';
+import 'package:ebac_flutter/Home/Controller/home_controller.dart';
 import 'package:ebac_flutter/Home/Widgets/custom_carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../Controller/home_controller.dart';
 
 class CatalogList extends StatelessWidget {
   const CatalogList({
